@@ -85,18 +85,7 @@ public class OrderRepository {
 
 
     public int getCountOfUnassignedOrders(){
-//        int count=0;
-//        for(String s:orderHashMap.keySet()){
-//            for(List<Order> orders:orderPartnerPairHashMap.values()){
-//                for(Order o:orders){
-//                    if(o.getId().equals(s)){
-//                        count++;
-//                    }
-//                }
-//            }
-//
-//        }
-//        return orderHashMap.size()-count;
+
         return unassignedOrder.size();
     }
 
@@ -135,7 +124,7 @@ public class OrderRepository {
         if(m.length()==1)
             m="0"+m;
         String str=h+":"+m;
-        //System.out.println(str);
+
 
         return str;
 
@@ -156,11 +145,6 @@ public class OrderRepository {
             List<Order> list=orderPartnerPairHashMap.get(s);
             Iterator<Order> iterator=list.iterator();
 
-//            for(Order o:list){
-//                if(o.getId().equals(orderId)){
-//                    list.remove(o);
-//                }
-//            }
             while(iterator.hasNext()){
                 Order o=iterator.next();
                 if(o.getId().equals(orderId)){
